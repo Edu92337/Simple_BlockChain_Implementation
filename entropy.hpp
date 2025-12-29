@@ -11,20 +11,20 @@ const unsigned char N[32] = {
 };
 
 bool is_valid_entropy(const vector<unsigned char>& entropy){
-    //verificar se o tamanho é 32 bytes
+    //verify if the size is valid
     bool at_least_one_non_zero = false;
     bool less_than_N = true;
     if(entropy.size()!=32){
         return false;
     }
-    //verificar se não é todo zeros
+    //verify if at least one byte is non-zero
     for(auto byte: entropy){
         if(byte!=0){
             at_least_one_non_zero = true;
             break;
         }
     }
-    //varificar se é menor que N
+    //varify if entropy < N
     for(size_t i=0;i<32;i++){
         if(entropy[i]>N[i]){
             less_than_N = false;
