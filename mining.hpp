@@ -11,7 +11,7 @@
 
 using namespace std;
 
-// Função para calcular SHA256 e retornar como string hexadecimal
+// Function to compute SHA-256 hash
 string sha256(const string& input){
     unsigned char hash[SHA256_DIGEST_LENGTH];
 
