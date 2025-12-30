@@ -1,3 +1,6 @@
+#ifndef ENTROPY_HPP
+#define ENTROPY_HPP
+
 #include<iostream>
 #include<random>
 #include<vector>
@@ -44,11 +47,13 @@ vector<unsigned char>generate_entropy(){
     size_t size_key = 32;
     vector<unsigned char>entropy(size_key);
     do{
-        for(int i = 0;i<size_key;i++){
+        for(size_t i = 0;i<size_key;i++){
             entropy[i] = (unsigned char)dis(gen);
         }
     }while(is_valid_entropy(entropy)==false);
-    
+
     return entropy;
 }
+
+#endif // ENTROPY_HPP
 
